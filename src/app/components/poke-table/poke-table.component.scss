@@ -1,0 +1,27 @@
+@import "../../../assets/styles/variables.scss";
+
+.container{
+  width:90%;
+margin: 60px;
+  text-align: center;
+
+}
+
+table
+{
+  min-width:80%;
+  margin: auto;
+  text-align: center;
+}
+
+.mat-header-cell{
+  color: black;
+
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.mat-row:nth-child(even){
+  background-color:red;
+}
