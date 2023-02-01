@@ -12,6 +12,23 @@ import { PokeDetailComponent } from './components/poke-detail/poke-detail.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/shared/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+
+
+// MODULES
+import { FormsModule } from '@angular/forms';
+
+
+// esto es para poder crear un ngmodel para obtener los datos del formulario
+
+// providers
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { JWT_OPTIONS } from '@auth0/angular-jwt';
+
+
+// permite decodificar y verificar los token desde el servidor
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
 
     PokeTableComponent,
-    PokeDetailComponent
+    PokeDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +47,12 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+{provide: JWT_OPTIONS, useValue:JWT_OPTIONS},
+JwtHelperService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
